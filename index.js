@@ -5,7 +5,7 @@
 // 2. The NASA Astronomy Picture of the Day (APOD) API, which provides a daily picture or video related to astronomy.
 
 async function fetchAstronauts(requestURL) {
-        
+
 }
 
 // CALL your function here
@@ -18,10 +18,17 @@ async function fetchAstronauts(requestURL) {
 // 4. Make a fetch request and format your resulting JSON. 
 // 5. Log the data to the console to inspect its structure.
 // 6. Modify the console log to only show the name of the 8th listed person in outerspace. 
+async function fetchAstronauts(requestURL) {
+ const response = await fetch(requestURL)
+ const data = await response.json()
+ console.log(data.people[7].name)
+}
 
+
+  let nasa = "http://api.open-notify.org/astros.json"
 
 // TASK 2: Fetch Data from the NASA Astronomy Picture of the Day (APOD) API
-
+fetchAstronauts(nasa)
 // 1. Find the "Astronomy Picture of the Day" API: https://api.nasa.gov/
 // 2. Identify whether you need to be authenticated with an API Key, if so create an account and save your key. 
 // 3. Navigate the documenation and create a request URL to fetch a list of all the people in outer space.
